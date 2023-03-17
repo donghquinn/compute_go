@@ -17,23 +17,27 @@ func FibonacciNumbers() {
 	fibo(count)
 }
 
-func fibo(count int) {
+func fibo(count int) []int {
 	firstNumber := 1
 
-	numbersArray = append(numbersArray, firstNumber)
-
-	for i := 1; i < count; i += 1 {
+	for i := 0; i < count; i += 1 {
 		fmt.Println("number i: ", i)
 
-		if i == 1 {
-			numbersArray = append(numbersArray, numbersArray[i]+0)
+		if i == 0 {
+			numbersArray = append(numbersArray, firstNumber)
 
 			fmt.Println("NumberArray: ", numbersArray)
+		} else if i == 1 {
+			numbersArray = append(numbersArray, firstNumber)
+
+			fmt.Println("NumberArray: ", numbersArray)
+		} else {
+			numbersArray = append(numbersArray, numbersArray[i-1]+numbersArray[i-2])
+
+			fmt.Println("Number Array: ", numbersArray)
 		}
 
-		numbersArray = append(numbersArray, numbersArray[i-1]+numbersArray[i-2])
-
-		fmt.Println("Number Array: ", numbersArray)
 	}
 
+	return numbersArray
 }
