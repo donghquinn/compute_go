@@ -2,7 +2,7 @@ package fibonacci
 
 import "fmt"
 
-var numbersArray []int64
+var numbersArray []uint64
 
 func FibonacciNumbers() {
 	var count int
@@ -17,8 +17,8 @@ func FibonacciNumbers() {
 	fibo(count)
 }
 
-func fibo(count int) []int64 {
-	var firstNumber int64
+func fibo(count int) []uint64 {
+	var firstNumber uint64
 
 	for i := 0; i < count; i += 1 {
 		fmt.Println("number i: ", i+1)
