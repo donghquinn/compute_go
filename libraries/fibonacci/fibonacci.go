@@ -28,7 +28,7 @@ func fibo(count int) []int {
 
 			fmt.Println("NumberArray: ", numbersArray)
 		} else if i == 1 {
-			numbersArray = append(numbersArray, firstNumber)
+			numbersArray = append(numbersArray, numbersArray[i-1]+0)
 
 			fmt.Println("NumberArray: ", numbersArray)
 		} else {
