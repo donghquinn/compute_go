@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	fibo "github.com/donghquinn/schoolwork/libraries/fibonacci"
+	linear "github.com/donghquinn/schoolwork/libraries/linear"
 	mean "github.com/donghquinn/schoolwork/libraries/mean"
 	variance "github.com/donghquinn/schoolwork/libraries/variance"
 )
@@ -30,6 +31,8 @@ func decideMethod(method string) {
 		callVarianceAndDeviance()
 	} else if method == "평균" {
 		callMean()
+	} else if method == "선형계획법" {
+		linear.LinearPlanning()
 	}
 }
 
