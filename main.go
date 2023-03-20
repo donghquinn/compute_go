@@ -15,7 +15,7 @@ var (
 )
 
 func main() {
-	methodArray = append(methodArray, "피보나치", "분산", "평균")
+	methodArray = append(methodArray, "피보나치", "분산", "평균", "선형계획법")
 
 	fmt.Println("연산 종류: ", methodArray)
 	fmt.Println("위 목록 중 사용할 연산을 선택해 주세요")
@@ -32,7 +32,7 @@ func decideMethod(method string) {
 	} else if method == "평균" {
 		callMean()
 	} else if method == "선형계획법" {
-		linear.LinearPlanning()
+		callLinearPlanning()
 	}
 }
 
@@ -95,4 +95,37 @@ func callMean() {
 
 		count += 1
 	}
+}
+
+func callLinearPlanning() {
+
+	var (
+		x1Name    string
+		x2Name    string
+		maxAnswer string
+	)
+
+	fmt.Println("선형 계획법")
+
+	fmt.Println("최대화 문제인가요? y / n")
+	fmt.Scanln(&maxAnswer)
+
+	isMax, minOrMax := linear.DecideMaxOrMin(maxAnswer)
+
+	if isMax == -1 {
+		return
+	}
+
+	fmt.Println("Is Max: ", isMax)
+	fmt.Println("Min or Max: ", minOrMax)
+
+	fmt.Println("첫번째 의사결정 변수 이름을 알려주세요")
+	fmt.Println("예시: 제품 갑의 생산량")
+	fmt.Scanln(&x1Name)
+
+	fmt.Println("두번째 의사결정 변수 이름을 알려주세요")
+	fmt.Println("예시: 제품 을의 생산량")
+	fmt.Scanln(&x2Name)
+
+	linear.LinearPlanning(x1Name, x2Name)
 }
