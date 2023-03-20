@@ -105,6 +105,8 @@ func callLinearPlanning() {
 		maxAnswer    string
 		constraints1 int
 		constraints2 int
+		goal1        int
+		goal2        int
 	)
 
 	fmt.Println("선형 계획법")
@@ -129,11 +131,17 @@ func callLinearPlanning() {
 	fmt.Println("예시: 제품 을의 생산량")
 	fmt.Scanln(&x2Name)
 
+	fmt.Println("첫번째 목적변수를 설정해 주세요")
+	fmt.Scanln(&goal1)
+
+	fmt.Println("두번째 목적변수를 설정해 주세요")
+	fmt.Scanln(&goal2)
+
 	fmt.Println("조건1을 입력해 주세요")
 	fmt.Scanln(&constraints1)
 
 	fmt.Println("조건2를 입력해 주세요")
 	fmt.Scanln(&constraints2)
 
-	linear.LinearPlanning(x1Name, x2Name, constraints1, constraints2, minOrMax)
+	linear.LinearPlanning(x1Name, x2Name, constraints1, constraints2, minOrMax, goal1, goal2)
 }

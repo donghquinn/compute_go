@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func LinearPlanning(x1Name string, x2Name string, constraint1 int, constraint2 int, minOrMax string) {
+func LinearPlanning(x1Name string, x2Name string, constraint1 int, constraint2 int, minOrMax string, goal1 int, goal2 int) {
 	var (
 		x1 int
 		x2 int
@@ -22,10 +22,15 @@ func LinearPlanning(x1Name string, x2Name string, constraint1 int, constraint2 i
 		return
 	}
 
-	constraintStatement(constraint1, constraint2, minOrMax)
+	constraintStatement(constraint1, constraint2, goal1, goal2, minOrMax)
 }
 
-func constraintStatement(constraint1 int, constraint2 int, minOrMax string) {
+func constraintStatement(constraint1 int, constraint2 int, goal1 int, goal2 int, minOrMax string) {
+	fmt.Println("제약조건식")
+
+	fmt.Printf("%d x1 + %d x2 <= %d ", constraint1, constraint2, goal1)
+	fmt.Printf("%d x1 + %d x2 <= %d ", constraint1, constraint2, goal2)
+
 	fmt.Printf("%s z = %d x1 + %d x2", minOrMax, constraint1, constraint2)
 }
 
