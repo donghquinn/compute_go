@@ -36,6 +36,7 @@ func constraintStatement(constraint1 int, constraint2 int, goal1 int, goal2 int,
 
 func DecideMaxOrMin(maxAnswer string) (int, string) {
 	var isMax int
+
 	minOrMax := "Max"
 
 	if maxAnswer == "y" {
