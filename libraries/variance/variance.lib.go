@@ -18,6 +18,8 @@ func VarianceAndDeviance(parameterArray []float64, count float64) (float64, floa
 	}
 
 	variance = (varianceTotal / count)
+
+	// Sqrt: 제곱근
 	deviance := math.Sqrt(variance)
 
 	return variance, deviance
