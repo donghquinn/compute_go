@@ -24,16 +24,11 @@ func main() {
 }
 
 func decideMethod(method string) {
-
 	if method == "피보나치" {
 		fibo.FibonacciNumbers()
-	}
-
-	if method == "분산" {
+	} else if method == "분산" {
 		callVarianceAndDeviance()
-	}
-
-	if method == "평균" {
+	} else if method == "평균" {
 		callMean()
 	}
 }
