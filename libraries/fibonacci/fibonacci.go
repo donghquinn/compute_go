@@ -8,7 +8,7 @@ func FibonacciNumbers() {
 	var count int
 
 	fmt.Println("피보나치 수열")
-	fmt.Println("~까지의 피보나치 수열을 구하겠습니다. 마지막 숫자를 입력해 주세요.")
+	fmt.Println("~까지의 피보나치 수열을 구합니다. 마지막 숫자를 입력해 주세요.")
 
 	fmt.Scanln(&count)
 
@@ -37,7 +37,6 @@ func fibo(count int) []uint64 {
 
 			fmt.Println("Number Array: ", numbersArray)
 		}
-
 	}
 
 	return numbersArray
