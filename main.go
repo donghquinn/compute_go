@@ -120,6 +120,8 @@ func callLinearPlanning() {
 		return
 	}
 
+	// TODO 조건 받기. 조건 제약 개수 만큼 파라미터 입력 등..
+
 	fmt.Println("Is Max: ", isMax)
 	fmt.Println("Min or Max: ", minOrMax)
 
