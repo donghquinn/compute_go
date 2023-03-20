@@ -1,8 +1,10 @@
 package linear
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func LinearPlanning(x1Name string, x2Name string) {
+func LinearPlanning(x1Name string, x2Name string, constraint1 int, constraint2 int, minOrMax string) {
 	var (
 		x1 int
 		x2 int
@@ -19,6 +21,12 @@ func LinearPlanning(x1Name string, x2Name string) {
 
 		return
 	}
+
+	constraintStatement(constraint1, constraint2, minOrMax)
+}
+
+func constraintStatement(constraint1 int, constraint2 int, minOrMax string) {
+	fmt.Printf("%s z = %d x1 + %d x2", minOrMax, constraint1, constraint2)
 }
 
 func DecideMaxOrMin(maxAnswer string) (int, string) {
