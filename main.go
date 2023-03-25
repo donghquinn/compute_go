@@ -39,7 +39,7 @@ func main() {
 	_, err2 := fmt.Scanln(&method)
 
 	if err2 != nil {
-		fmt.Println(err)
+		fmt.Println(err2)
 		bufio.NewReader(os.Stdin)
 	}
 
