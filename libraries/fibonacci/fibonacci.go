@@ -21,8 +21,6 @@ func fibo(count int) []uint64 {
 	var firstNumber uint64
 
 	for i := 0; i < count; i += 1 {
-		fmt.Println("number i: ", i+1)
-
 		if i == 0 {
 			firstNumber = 1
 			numbersArray = append(numbersArray, firstNumber)
