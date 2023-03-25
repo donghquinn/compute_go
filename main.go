@@ -3,7 +3,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 
 	fibo "github.com/donghquinn/schoolwork/libraries/fibonacci"
 	linear "github.com/donghquinn/schoolwork/libraries/linear"
@@ -48,7 +50,12 @@ func callVarianceAndDeviance() {
 	fmt.Println("'분산'을 골라주셨습니다. 분산에 사용할 값을 하나하나 입력하여 주세요.")
 
 	for {
-		fmt.Scanln(&parameter)
+		_, err := fmt.Scanln(&parameter)
+
+		if err != nil {
+			fmt.Println(err)
+			bufio.NewReader(os.Stdin)
+		}
 
 		if parameter == -1 {
 			fmt.Println("Detected Closing Signal: -1")
@@ -79,7 +86,11 @@ func callMean() {
 	fmt.Println("'평균'을 골라주셨습니다. 분산에 사용할 값을 하나하나 입력하여 주세요.")
 
 	for {
-		fmt.Scanln(&parameter)
+		_, err := fmt.Scanln(&parameter)
+
+		if err != nil {
+			bufio.NewReader(os.Stdin)
+		}
 
 		if parameter == -1 {
 			fmt.Println("Detected Closing Signal: -1")
@@ -114,7 +125,13 @@ func callLinearPlanning() {
 	fmt.Println("선형 계획법")
 
 	fmt.Println("최대화 문제인가요? y / n")
-	fmt.Scanln(&maxAnswer)
+
+	_, err := fmt.Scanln(&maxAnswer)
+
+	if err != nil {
+		fmt.Println(err)
+		bufio.NewReader(os.Stdin)
+	}
 
 	isMax, minOrMax := linear.DecideMaxOrMin(maxAnswer)
 
