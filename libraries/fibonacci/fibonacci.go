@@ -32,10 +32,9 @@ func fibo(count int) []uint64 {
 			fmt.Println("NumberArray: ", numbersArray)
 		} else {
 			numbersArray = append(numbersArray, numbersArray[i-1]+numbersArray[i-2])
-
-			fmt.Printf("Fibonacci Number: %d, Number Array: %v", count, numbersArray)
+			fmt.Println("NumberArray: ", numbersArray)
 		}
 	}
-
+	fmt.Printf("Fibonacci Number: %d, Number Array: %v\n", count, numbersArray)
 	return numbersArray
 }
