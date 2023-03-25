@@ -23,9 +23,41 @@ func main() {
 
 	fmt.Println("연산 종류: ", methodArray)
 	fmt.Println("위 목록 중 사용할 연산을 선택해 주세요")
-	fmt.Scanln(&method)
+	_, err := fmt.Scanln(&method)
+
+	if err != nil {
+		fmt.Println(err)
+		bufio.NewReader(os.Stdin)
+	}
+
+	findMatchingMethod(method, methodArray)
+
+	fmt.Println("@@@@@@@@@@@@@@@@@@@@@@@@@")
+	fmt.Println("다시 한 번 입력하여 주세요")
+	fmt.Println("연산 종류: ", methodArray)
+	fmt.Println("위 목록 중 사용할 연산을 선택해 주세요")
+	_, err2 := fmt.Scanln(&method)
+
+	if err2 != nil {
+		fmt.Println(err)
+		bufio.NewReader(os.Stdin)
+	}
 
 	decideMethod(method)
+}
+
+func findMatchingMethod(method string, methodArray []string) {
+	for i := 0; i < len(methodArray); i += 1 {
+		errCount := 0
+		if method != methodArray[i] {
+			errCount += 1
+		}
+
+		if errCount == len(methodArray) {
+			fmt.Println("일치하는 연산이 없습니다. 다시 입력하여 주세요")
+			bufio.NewReader(os.Stdin)
+		}
+	}
 }
 
 func decideMethod(method string) {
