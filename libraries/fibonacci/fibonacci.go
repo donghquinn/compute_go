@@ -25,14 +25,12 @@ func fibo(count int) []uint64 {
 			firstNumber = 1
 			numbersArray = append(numbersArray, firstNumber)
 
-			fmt.Println("NumberArray: ", numbersArray)
 		} else if i == 1 {
 			numbersArray = append(numbersArray, numbersArray[i-1]+0)
 
-			fmt.Println("NumberArray: ", numbersArray)
 		} else {
 			numbersArray = append(numbersArray, numbersArray[i-1]+numbersArray[i-2])
-			fmt.Println("NumberArray: ", numbersArray)
+
 		}
 	}
 	fmt.Printf("Fibonacci Number: %d, Number Array: %v\n", count, numbersArray)
