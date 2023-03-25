@@ -12,8 +12,6 @@ func FibonacciNumbers() {
 
 	fmt.Scanln(&count)
 
-	fmt.Println("Final Number", count)
-
 	fibo(count)
 }
 
