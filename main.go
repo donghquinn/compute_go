@@ -80,6 +80,7 @@ func callVarianceAndDeviance() {
 	)
 
 	fmt.Println("'분산'을 골라주셨습니다. 분산에 사용할 값을 하나하나 입력하여 주세요.")
+	fmt.Println("다 입력하였다면 -1 을 입력해 주세요.")
 
 	for {
 		_, err := fmt.Scanln(&parameter)
