@@ -36,6 +36,7 @@ func main() {
 	fmt.Println("다시 한 번 입력하여 주세요")
 	fmt.Println("연산 종류: ", methodArray)
 	fmt.Println("위 목록 중 사용할 연산을 선택해 주세요")
+	
 	_, err2 := fmt.Scanln(&method)
 
 	if err2 != nil {
